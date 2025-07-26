@@ -40,10 +40,12 @@ for (let i = 0; i < bikes.length; i++) {
     }
 }
 
-document.writeln(`
-    <p>la bici più leggera è ${ligthBike.nome} con un peso di ${ligthBike.peso} kg</p>
-    
-    `)
+const outputEl = document.querySelector('.output')
+console.log(outputEl);
+
+
+outputEl.innerHTML = `
+    <p>la bici più leggera è ${ligthBike.nome} con un peso di ${ligthBike.peso} kg</p>  `
 
 
 /* Snack2
@@ -52,3 +54,48 @@ Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
 Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
 Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
 Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console. */
+
+//dichiaro l'array di ogetti per le squadre di calcio
+const soccerTeam = [
+    {
+        "nome": '',
+        "punti fatti": 0
+        ,
+        "falli subiti": 0
+    },
+    {
+        "nome": '',
+        "punti fatti": 0
+        ,
+        "falli subiti": 0
+    },
+    {
+        "nome": '',
+        "punti fatti": 0
+        ,
+        "falli subiti": 0
+    },
+    {
+        "nome": '',
+        "punti fatti": 0
+        ,
+        "falli subiti": 0
+    },
+    {
+        "nome": '',
+        "punti fatti": 0
+        ,
+        "falli subiti": 0
+    }
+
+]
+
+console.log(soccerTeam);
+
+
+
+//funzione Helper per numeri random
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
