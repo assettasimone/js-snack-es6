@@ -2,14 +2,14 @@
 Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 Stampare a schermo la bici con peso minore. */
 
-const bike = [
+const bikes = [
     {
         nome: 'Colnago',
         peso: 6
     },
     {
         nome: 'Atala',
-        peso: 10
+        peso: 3
     },
     {
         nome: 'Specialized',
@@ -22,10 +22,28 @@ const bike = [
 
 ]
 
-console.log(bike);
+console.log(bikes);
 
+//dichiaro una variabile d'appoggio per vedere quale è la bici più leggera
+let ligthBike = {
+    nome: '',
+    peso: 999999
+};
 
+//ciclo tutte le bici all'interno dell'array
+for (let i = 0; i < bikes.length; i++) {
+    const bike = bikes[i];
 
+    //se la bici è più leggera della va
+    if (ligthBike.peso > bike.peso) {
+        ligthBike = bike;
+    }
+}
+
+document.writeln(`
+    <p>la bici più leggera è ${ligthBike.nome} con un peso di ${ligthBike.peso} kg</p>
+    
+    `)
 
 
 /* Snack2
