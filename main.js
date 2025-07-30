@@ -51,46 +51,70 @@ outputEl.innerHTML = `
 /* Snack2
 Creare un array di oggetti di squadre di calcio.
 Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
-Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
-Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
-Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console. */
+ */
 
 //dichiaro l'array di ogetti per le squadre di calcio
-const soccerTeam = [
+const soccerTeams = [
     {
-        "nome": '',
-        "punti fatti": 0
-        ,
+        "nome": 'juventus',
+        "punti fatti": 0,
         "falli subiti": 0
     },
     {
-        "nome": '',
-        "punti fatti": 0
-        ,
+        "nome": 'Inter',
+        "punti fatti": 0,
         "falli subiti": 0
     },
     {
-        "nome": '',
-        "punti fatti": 0
-        ,
+        "nome": 'Milan',
+        "punti fatti": 0,
         "falli subiti": 0
     },
     {
-        "nome": '',
-        "punti fatti": 0
-        ,
+        "nome": 'Roma',
+        "punti fatti": 0,
         "falli subiti": 0
     },
     {
-        "nome": '',
-        "punti fatti": 0
-        ,
+        "nome": 'Sampdoria',
+        "punti fatti": 0,
         "falli subiti": 0
     }
 
 ]
 
-console.log(soccerTeam);
+/* Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
+ */
+
+for (let i = 0; i < soccerTeams.length; i++) {
+
+    soccerTeams[i]["falli subiti"] = getRndInteger(0, 68);
+    soccerTeams[i]["punti fatti"] = getRndInteger(0, 99);
+
+}
+
+console.log(soccerTeams);
+
+/* Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console. */
+
+const teamPenalty = [];
+
+for (let i = 0; i < soccerTeams.length; i++) {
+
+    const Team = soccerTeams[i];
+
+    teamPenalty.push({
+        "nome": Team["nome"],
+        "falli subiti": Team["falli subiti"]
+    })
+}
+
+
+
+console.log(teamPenalty);
+
+
 
 
 
